@@ -14,7 +14,7 @@ import SEOHead from "@/components/SEOHead";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeading from "@/components/SectionHeading";
 
-import heroImg from "../assets/9.jpg";
+import heroImg from "../assets/heroImg.jpg";
 import entranceDay from "@/assets/entrance-day.jpg";
 import monumentNight from "@/assets/monument-night.jpg";
 import boulevard from "@/assets/boulevard.jpg";
