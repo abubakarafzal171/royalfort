@@ -53,6 +53,28 @@ ${form.message}
       <SEOHead
         title="Contact Us | Royal Fort Housing Scheme Sahiwal — Book Your Plot"
         description="Contact Royal Fort Housing Scheme Sahiwal for plot bookings and inquiries. Call 0300-4968586. Visit us at Old Harappa Road, in front of APS School Sahiwal."
+        canonical="https://royalfort.site/contact"
+        ogImage="https://royalfort.site/logo.png"
+        twitterImage="https://royalfort.site/logo.png"
+        url="https://royalfort.site/contact"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "RealEstateAgent",
+          name: "Royal Fort Housing Scheme",
+          url: "https://royalfort.site",
+          logo: "https://royalfort.site/logo.png",
+          image: "https://royalfort.site/logo.png",
+          description:
+            "Contact Royal Fort Housing Scheme Sahiwal for inquiries and plot bookings. Open 7 days a week.",
+          telephone: "+923004968586",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Old Harappa Road",
+            addressLocality: "Sahiwal",
+            addressCountry: "Pakistan",
+          },
+          openingHours: "Mo-Su 09:00-18:00",
+        }}
       />
 
       {/* Hero */}
@@ -146,6 +168,7 @@ ${form.message}
                     <label className="text-sm text-muted-foreground mb-2 block font-body">
                       Interested Plot Size
                     </label>
+
                     <select
                       value={form.plotSize}
                       onChange={(e) =>
@@ -154,12 +177,38 @@ ${form.message}
                       className="w-full bg-secondary border border-border rounded-md px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary transition-colors"
                     >
                       <option value="">Select size</option>
-                      <option value="4 Marla">4 Marla</option>
-                      <option value="5 Marla">5 Marla</option>
-                      <option value="6 Marla">6 Marla</option>
-                      <option value="7 Marla">7 Marla</option>
-                      <option value="10 Marla">10 Marla</option>
-                      <option value="20 Marla">20 Marla</option>
+
+                      <option value="4 Marla (1080 sq ft)">
+                        4 Marla — 1080 sq ft
+                      </option>
+
+                      <option value="5 Marla (1350 sq ft)">
+                        5 Marla — 1350 sq ft
+                      </option>
+
+                      <option value="6 Marla (1620 sq ft)">
+                        6 Marla — 1620 sq ft
+                      </option>
+
+                      <option value="7 Marla (1890 sq ft)">
+                        7 Marla — 1890 sq ft
+                      </option>
+
+                      <option value="10 Marla (2700 sq ft)">
+                        10 Marla — 2700 sq ft
+                      </option>
+
+                      <option value="20 Marla (5400 sq ft)">
+                        20 Marla — 5400 sq ft
+                      </option>
+
+                      <option value="Commercial 2.5 Marla (675 sq ft)">
+                        Commercial 2.5 Marla — 675 sq ft
+                      </option>
+
+                      <option value="Commercial 5 Marla (1350 sq ft)">
+                        Commercial 5 Marla — 1350 sq ft
+                      </option>
                     </select>
                   </div>
                 </div>

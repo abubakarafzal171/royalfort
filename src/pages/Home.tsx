@@ -54,21 +54,90 @@ const features = [
     desc: "Fully approved by Town Municipal Administration",
   },
 ];
+const residentialPlots = [
+  {
+    size: 4 * 270,
+    unit: "Sq Ft",
+    marla: "4 Marla",
+    type: "Residential Plot",
+    details: "Ideal for small family homes with modern design.",
+  },
+  {
+    size: 5 * 270,
+    unit: "Sq Ft",
+    marla: "5 Marla",
+    type: "Residential Plot",
+    details: "Perfect balance of affordability and comfortable living.",
+  },
+  {
+    size: 6 * 270,
+    unit: "Sq Ft",
+    marla: "6 Marla",
+    type: "Residential Plot",
+    details: "Spacious plot suitable for stylish modern houses.",
+  },
+  {
+    size: 7 * 270,
+    unit: "Sq Ft",
+    marla: "7 Marla",
+    type: "Residential Plot",
+    details: "Extra space for luxury family living.",
+  },
+  {
+    size: 10 * 270,
+    unit: "Sq Ft",
+    marla: "10 Marla",
+    type: "Residential Plot",
+    details: "Premium residential plots for elegant homes.",
+  },
+  {
+    size: 20 * 270,
+    unit: "Sq Ft",
+    marla: "20 Marla",
+    type: "Residential Plot",
+    details: "Luxury plots ideal for large villas and farm-style homes.",
+  },
+];
 
-const plotSizes = [
-  "4 Marla",
-  "5 Marla",
-  "6 Marla",
-  "7 Marla",
-  "10 Marla",
-  "20 Marla",
+const commercialPlots = [
+  {
+    size: 2.5 * 270,
+    unit: "Sq Ft",
+    marla: "2.5 Marla",
+    type: "Commercial Plot",
+    details: "Ideal for shops, offices, and small businesses.",
+  },
+  {
+    size: 4 * 270,
+    unit: "Sq Ft",
+    marla: "4 Marla",
+    type: "Commercial Plot",
+    details: "Perfect for plazas, showrooms, and commercial buildings.",
+  },
 ];
 
 const Home = () => (
   <>
     <SEOHead
       title="Royal Fort Housing Scheme Sahiwal | Premium Plots & Luxury Living"
-      description="Royal Fort Housing Scheme Sahiwal — TMA Approved luxury housing society. Premium residential & commercial plots in 4, 5, 6, 7, 10 & 20 Marla. A project by Al-Kareem Associates."
+      description="Royal Fort Housing Scheme Sahiwal — TMA Approved luxury housing society. Premium residential & commercial plots available."
+      canonical="https://royalfort.site/"
+      ogImage="https://royalfort.site/heroImg.jpg"
+      twitterImage="https://royalfort.site/heroImg.jpg"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "Residence",
+        name: "Royal Fort Housing Scheme Sahiwal",
+        description:
+          "Premium residential & commercial plots in Sahiwal, Pakistan",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Old Harappa Road, In Front of APS School",
+          addressLocality: "Sahiwal",
+          addressCountry: "Pakistan",
+        },
+        image: [heroImg, aerialGate, modernHouse],
+      }}
     />
 
     {/* HERO */}
@@ -202,24 +271,26 @@ const Home = () => (
     </section>
 
     {/* FEATURES */}
-    <section className="section-padding bg-card">
-      <div className="container-luxury">
+    <section className="section-padding ">
+      <div className="container-luxury ">
         <SectionHeading
           subtitle="World-Class"
           title="Features & Amenities"
           description="Every detail has been carefully planned to offer you the finest living experience"
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 bg-yell">
           {features.map((f, i) => (
             <AnimatedSection key={f.title} delay={i * 0.1}>
               <div className="luxury-card p-8 text-center transition-all duration-500 group h-full">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors ">
                   <f.icon className="text-primary" size={28} />
                 </div>
-                <h3 className="font-heading text-xl font-semibold text-foreground mb-3">
+                <h3 className="font-heading text-2xl font-semibold text-foreground mb-3 text-orange-300">
                   {f.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">{f.desc}</p>
+                <p className="text-muted-foreground text-md text-gray-100">
+                  {f.desc}
+                </p>
               </div>
             </AnimatedSection>
           ))}
@@ -230,25 +301,76 @@ const Home = () => (
     {/* PLOT SIZES */}
     <section className="section-padding bg-background">
       <div className="container-luxury">
+        {/* Residential Plots */}
         <SectionHeading
           subtitle="Invest In Your Future"
-          title="Available Plot Sizes"
-          description="Choose from a variety of residential and commercial plots tailored to your needs"
+          title="Residential Plot Sizes"
+          description="Choose from a variety of residential plots designed for comfortable family living"
         />
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-          {plotSizes.map((size, i) => (
-            <AnimatedSection key={size} delay={i * 0.08}>
-              <div className="luxury-card p-6 text-center group cursor-pointer">
-                <p className="font-heading text-3xl font-bold gold-gradient-text mb-2">
-                  {size.split(" ")[0]}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+          {residentialPlots.map((plot, i) => (
+            <AnimatedSection key={i} delay={i * 0.1}>
+              <div className="luxury-card p-8 text-center group transition-all duration-500">
+                <p className="font-heading text-4xl font-bold gold-gradient-text mb-2">
+                  {plot.size}
                 </p>
-                <p className="text-muted-foreground text-sm uppercase tracking-wider">
-                  Marla
+
+                <p className="text-primary font-semibold uppercase tracking-wider">
+                  {plot.unit}
+                </p>
+
+                <p className="text-muted-foreground text-sm mt-2">
+                  {plot.marla}
+                </p>
+
+                <p className="text-gray-400 text-xs uppercase mt-2">
+                  {plot.type}
+                </p>
+
+                <p className="text-muted-foreground text-sm mt-4 leading-relaxed">
+                  {plot.details}
                 </p>
               </div>
             </AnimatedSection>
           ))}
         </div>
+
+        {/* Commercial Plots */}
+        <SectionHeading
+          subtitle="Business Opportunities"
+          title="Commercial Plot Sizes"
+          description="Premium commercial plots available for shops, offices, and plazas"
+        />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 mt-10">
+          {commercialPlots.map((plot, i) => (
+            <AnimatedSection key={i} delay={i * 0.1}>
+              <div className="luxury-card p-8 text-center transition-all duration-500">
+                <p className="font-heading text-4xl font-bold gold-gradient-text mb-2">
+                  {plot.size}
+                </p>
+
+                <p className="text-primary font-semibold uppercase tracking-wider">
+                  {plot.unit}
+                </p>
+
+                <p className="text-muted-foreground text-sm mt-2">
+                  {plot.marla}
+                </p>
+
+                <p className="text-gray-400 text-xs uppercase mt-2">
+                  {plot.type}
+                </p>
+
+                <p className="text-muted-foreground text-sm mt-4">
+                  {plot.details}
+                </p>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+
         <AnimatedSection delay={0.4}>
           <div className="text-center mt-12">
             <Link to="/plot-plans" className="btn-gold rounded-md">
